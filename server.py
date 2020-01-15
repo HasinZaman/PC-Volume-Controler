@@ -115,8 +115,7 @@ class Serv(BaseHTTPRequestHandler):
         self.wfile.write(response.encode())
         pass
 
+host = "0.0.0.0"
 
-
-
-httpd = HTTPServer(("192.168.0.18", 8080), Serv)
+httpd = HTTPServer((host, 8080), Serv)
 httpd.serve_forever()
