@@ -51,20 +51,39 @@ body{
 			background-color: rgba(0,0,0,0);
 
 		}
-		img{
+		@media (orientation: portrait){
+			img{
 
-			width: 80%;
-			height: auto;
+				width: 80%;
+				height: auto;
 
-			top:50%;
-			left:50%;
+				top:50%;
+				left:50%;
 
-			transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
 
-			position: absolute;
+				position: absolute;
 
-			z-index: 1;
+				z-index: 1;
+			}
 		}
+		@media (orientation: landscape){
+			img{
+
+				width: auto;
+				height: 80%;
+
+				top:50%;
+				left:50%;
+
+				transform: translate(-50%,-50%);
+
+				position: absolute;
+
+				z-index: 1;
+			}
+		}
+
 	}
 	.pressed{
 		img{
