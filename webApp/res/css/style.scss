@@ -1,0 +1,109 @@
+body{
+
+	width: 100vw;
+	min-height: 100vh;
+	height: fit-content;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	background: black;
+	color: white;
+}
+.ui-loader{
+	display: none;
+};
+.remote{
+
+	width: calc(100vw - 40px);
+	height: calc(100vh - 20px);
+
+	margin: 10px;
+
+	button,div{
+
+		width: 100%;
+		height: 100%;
+
+		position: relative;
+
+		background-color: black;
+
+		border:solid white 3px;
+		border-radius: 30px;
+
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+		.buttoncover{
+
+			width: 100%;
+			height: 100%;
+
+			top:0;
+			left:0;
+
+			position: absolute;
+
+			z-index: 2;
+
+
+			background-color: rgba(0,0,0,0);
+
+		}
+		img{
+
+			width: 80%;
+			height: auto;
+
+			top:50%;
+			left:50%;
+
+			transform: translate(-50%,-50%);
+
+			position: absolute;
+
+			z-index: 1;
+		}
+	}
+	.pressed{
+		img{
+			transform: translate(-50%,-50%) scale(1.1);	
+		}
+	}
+}
+
+#volumeUtility.remote{
+
+	display: grid;
+
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 20px;
+
+	grid-template-areas:
+        "playPause playPause volumeUp"
+        "playPause playPause volumeDown"
+        "skipBack volumeMute skipNext";
+
+	#playPause{
+		grid-area:playPause;
+	}
+	#volumeUp{
+		grid-area:volumeUp;
+	}
+	#volumeDown{
+		grid-area:volumeDown;
+	}
+	#skipBack{
+		grid-area:skipBack;
+	}
+	#skipNext{
+		grid-area:skipNext;
+	}
+	#volumeMute{
+		grid-area:volumeMute;
+	}
+
+}
