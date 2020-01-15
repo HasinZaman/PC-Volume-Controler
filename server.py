@@ -65,16 +65,8 @@ class Serv(BaseHTTPRequestHandler):
 
         response = ""
 
-        if data["action"] == "start":
-            response = '"mute":{0},"volume":{1}'.format(volumeUtility.muteStatus(), volumeUtility.volumeLevelStatus())
-            response = "{"+response+"}"
-            self.send_response(201)
 
-        elif data["action"] == "getMute":
-            response = volumeUtility.muteStatus()
-            self.send_response(201)
-        
-        elif data["action"] == "getVolume":
+        if data["action"] == "getVolume":
             response = volumeUtility.volumeLevelStatus()
             self.send_response(201)
             
@@ -115,7 +107,7 @@ class Serv(BaseHTTPRequestHandler):
         self.wfile.write(response.encode())
         pass
 
-host = "0.0.0.0"
+host = "192.168.0.18"
 
 httpd = HTTPServer((host, 8080), Serv)
 httpd.serve_forever()

@@ -78,9 +78,6 @@ def key(key_code, length = 0):
 #end
 
 
-def muteStatus():
-    return volume.GetMute()
-
 def volumeLevelStatus():
     return pyCawToPercent(volume.GetMasterVolumeLevel())
 

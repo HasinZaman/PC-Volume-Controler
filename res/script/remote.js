@@ -57,21 +57,6 @@ function buttonPress(actionInput){
 	})
 }
 
-function start(){
-	$.ajax({
-		type:"POST",
-		data:{
-			action:"start"
-		}
-	}).done(startResponse).fail(start)
-}
-function startResponse(result){
-	temp = JSON.parse(result);
-
-	$("button#volumeMute").attr("data-pressCond",temp["mute"])
-	setTimeout(update,100)
-}
-
 function update(){
 	if($("button#volumeUp").attr("data-pressCond") == 1){
 		buttonPress("increaseVolume")
@@ -93,4 +78,4 @@ function updateResponse(result){
 	setTimeout(update,100)
 }
 
-start()
+update()
