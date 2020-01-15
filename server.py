@@ -107,7 +107,7 @@ class Serv(BaseHTTPRequestHandler):
         self.wfile.write(response.encode())
         pass
 
-host = "192.168.0.18"
+host = "0.0.0.0"
 
 httpd = HTTPServer((host, 8080), Serv)
 httpd.serve_forever()
